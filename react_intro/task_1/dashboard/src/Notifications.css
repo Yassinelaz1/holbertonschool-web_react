@@ -1,8 +1,8 @@
-:root {
-  --main-color: #e01d3f;
-}
+/* task_1/dashboard/src/Notifications.css */
 
-.Notifications {
-  border: 3px solid var(--main-color);
-  padding: 50px;
-}
+.notifications {
+    border: 2px dotted #e1003c;
+    padding: 10px;
+    margin: 10px;
+  }
+  
