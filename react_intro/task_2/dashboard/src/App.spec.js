@@ -3,23 +3,25 @@ import { render, screen } from '@testing-library/react';
 import App from './App';
 
 describe('App component', () => {
-  test('renders the header title', () => {
+  test('renders 2 input elements', () => {
     render(<App />);
-    const heading = screen.getByRole('heading', { name: /school dashboard/i });
-    expect(heading).toBeInTheDocument();
+    const inputs = screen.getAllByRole('textbox');
+    const passwordInput = screen.getByLabelText(/password/i);
+    expect(inputs.length).toBe(1); // Only email uses 'textbox' role
+    expect(passwordInput).toBeInTheDocument(); // password is type="password"
   });
 
-  test('renders correct paragraph text in App-body and App-footer', () => {
+  test('renders 2 label elements with the text Email and Password', () => {
     render(<App />);
-    const bodyText = screen.getByText(/login to access the full dashboard/i);
-    const footerText = screen.getByText(/copyright.*holberton school/i);
-    expect(bodyText).toBeInTheDocument();
-    expect(footerText).toBeInTheDocument();
+    const emailLabel = screen.getByLabelText(/email/i);
+    const passwordLabel = screen.getByLabelText(/password/i);
+    expect(emailLabel).toBeInTheDocument();
+    expect(passwordLabel).toBeInTheDocument();
   });
 
-  test('renders the holberton logo image', () => {
+  test('renders a button with text OK', () => {
     render(<App />);
-    const logoImg = screen.getByAltText(/holberton logo/i);
-    expect(logoImg).toBeInTheDocument();
+    const button = screen.getByRole('button', { name: /ok/i });
+    expect(button).toBeInTheDocument();
   });
 });
