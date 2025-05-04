@@ -1,5 +1,3 @@
-// task_1/dashboard/src/App.jsx
-
 import React from 'react';
 import './App.css';
 import logo from './holberton-logo.jpg';
@@ -19,6 +17,13 @@ function App() {
         </div>
         <div className="App-body">
           <p>Login to access the full dashboard</p>
+          <label htmlFor="email">Email:</label>
+          <input type="email" id="email" name="email" />
+
+          <label htmlFor="password">Password:</label>
+          <input type="password" id="password" name="password" />
+
+          <button type="button">OK</button>
         </div>
         <div className="App-footer">
           <p>
