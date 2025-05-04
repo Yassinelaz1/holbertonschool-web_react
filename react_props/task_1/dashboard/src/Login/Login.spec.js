@@ -1,6 +1,5 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import Login from './Login';
 
 test('renders login form with 2 labels, 2 inputs, and 1 button', () => {
