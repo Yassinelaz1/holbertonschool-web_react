@@ -1,18 +1,15 @@
+/* task_2/dashboard/src/Notifications.css */
+
 .notifications {
   border: 2px dashed #e1484c;
-  padding: 10px;
+  padding: 20px;
   margin: 20px;
   position: relative;
 }
 
 .notifications p {
-  margin: 0;
   font-weight: bold;
-}
-
-.notifications ul {
-  margin: 10px 0 0 0;
-  padding-left: 20px;
+  margin-bottom: 10px;
 }
 
 .notifications li[data-priority='default'] {

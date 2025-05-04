@@ -15,6 +15,7 @@ function App() {
           <img src={logo} alt="holberton logo" />
           <h1>School dashboard</h1>
         </div>
+
         <div className="App-body">
           <p>Login to access the full dashboard</p>
           <form>
