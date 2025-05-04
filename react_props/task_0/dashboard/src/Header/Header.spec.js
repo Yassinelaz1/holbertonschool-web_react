@@ -1,10 +1,13 @@
-import  shallow from "enzyme";
-import React from "react";
-import Header from "./Header";
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import Header from './Header';
 
-describe("<Header />", () => {
-  it("Header renders without crashing", () => {
-    const wrapper = shallow(<Header />);
-    expect(wrapper.exists()).toEqual(true);
-  });
+test('renders header with logo', () => {
+  render(<Header />);
+  expect(screen.getByAltText(/holberton logo/i)).toBeInTheDocument();
+});
+
+test('renders header with title', () => {
+  render(<Header />);
+  expect(screen.getByText(/School dashboard/i)).toBeInTheDocument();
 });
