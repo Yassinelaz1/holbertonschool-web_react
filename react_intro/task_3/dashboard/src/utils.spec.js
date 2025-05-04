@@ -17,8 +17,7 @@ describe('Utils functions', () => {
   });
 
   test('getLatestNotification returns correct HTML string', () => {
-    expect(getLatestNotification()).toBe(
-      '<strong>Urgent requirement</strong> - complete by EOD'
-    );
+    expect(getLatestNotification()).toBe('<strong>Urgent requirement</strong> - complete by EOD');
   });
+  
 });
