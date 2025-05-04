@@ -1,17 +1,13 @@
-import React from 'react';
-import './App.css';
-import holbertonLogo from './assets/holberton-logo.jpg';
-import { getCurrentYear, getFooterCopy } from './utils';
-import Notifications from './Notifications';
+import React from "react";
+import "./App.css";
+import holberton_logo from "./assets/holberton-logo.jpg";
+import { getFullYear, getFooterCopy } from "./utils";
 
 function App() {
   return (
     <>
-      <div className="root-notifications">
-        <Notifications />
-      </div>
       <div className="App-header">
-        <img src={holbertonLogo} alt="holberton logo" />
+        <img src={holberton_logo} />
         <h1>School dashboard</h1>
       </div>
       <div className="App-body">
@@ -19,7 +15,7 @@ function App() {
       </div>
       <div className="App-footer">
         <p>
-          Copyright {getCurrentYear()} - {getFooterCopy(true)}
+          Copyright {getFullYear()} - {getFooterCopy(true)}
         </p>
       </div>
     </>
