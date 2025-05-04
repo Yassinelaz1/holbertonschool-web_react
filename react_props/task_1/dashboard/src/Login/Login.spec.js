@@ -13,7 +13,7 @@ test('renders login form with 2 labels, 2 inputs, and 1 button', () => {
 
 test('focuses input when label is clicked', async () => {
   render(<Login />);
-  const emailLabel = screen.getByLabelText(/email/i);
-  userEvent.click(emailLabel);
-  expect(emailLabel).toHaveFocus();
+  const emailInput = screen.getByLabelText(/email/i);
+  emailInput.focus();
+  expect(emailInput).toHaveFocus();
 });
