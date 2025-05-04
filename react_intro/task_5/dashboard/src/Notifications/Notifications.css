@@ -1,36 +1,21 @@
-.notifications{
-  padding: 10px;
-  padding-right: 0px;
-  margin-bottom: 10px;
-  border: 3px dotted;
-  border-color: #e1003c;
-}
+/* task_2/dashboard/src/Notifications.css */
 
-[aria-label="Close"] img {
-  height: 10px;
-  width: 10px;
+.notifications {
+  border: 2px dashed #e1484c;
+  padding: 20px;
+  margin: 20px;
+  position: relative;
 }
 
 .notifications p {
-  display: inline-block;
-  width: 97%;
-  margin: 0px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
-[aria-label="Close"] {
-  border: none;
-  background-color: white;
-  text-align: right;
-}
-
-[data-priority="default"] {
+.notifications li[data-priority='default'] {
   color: blue;
 }
 
-[data-priority="urgent"] {
-  color: red;
-}
-
-[data-priority="urgent"] + li {
+.notifications li[data-priority='urgent'] {
   color: red;
 }
