@@ -1,27 +1,43 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import App from './App';
+import {render, screen} from '@testing-library/react'
+import App from './App.jsx'
 
-describe('App component', () => {
-  test('renders 2 input elements', () => {
-    render(<App />);
-    const inputs = screen.getAllByRole('textbox');
-    const passwordInput = screen.getByLabelText(/password/i);
-    expect(inputs.length).toBe(1); // Only email uses 'textbox' role
-    expect(passwordInput).toBeInTheDocument(); // password is type="password"
-  });
-
-  test('renders 2 label elements with the text Email and Password', () => {
-    render(<App />);
-    const emailLabel = screen.getByLabelText(/email/i);
-    const passwordLabel = screen.getByLabelText(/password/i);
-    expect(emailLabel).toBeInTheDocument();
-    expect(passwordLabel).toBeInTheDocument();
-  });
-
-  test('renders a button with text OK', () => {
-    render(<App />);
-    const button = screen.getByRole('button', { name: /ok/i });
-    expect(button).toBeInTheDocument();
-  });
-});
+describe("App component", () => {
+    it("is the header rendered", () => {
+        render(<App />)
+        const h1elem = screen.getByRole("heading")
+        expect(h1elem).toBeInTheDocument()
+    })
+    it("is the image rendred", () => {
+        render(<App />)
+        const img = screen.getByAltText("holberton logo")
+        expect(img).toBeInTheDocument()
+    })
+    it("are the input elements renderd", () => {
+        render(<App />)
+        const allInputs = screen.getAllByRole("textbox")
+        allInputs.map((elem) => {expect(elem).toBeInTheDocument()})
+    })
+    it("are the labels rendred", () => {
+        render(<App />)
+        const email = screen.getByLabelText(/Email/i)
+        const pw = screen.getByLabelText(/Password/i)
+        expect(email).toBeInTheDocument()
+        expect(pw).toBeInTheDocument()
+    })
+    it("is the button rendred", () => {
+        render(<App />)
+        const btn = screen.getByRole("button", { name: /ok/i })
+        expect(btn).toBeInTheDocument()
+        expect(btn.textContent).toMatch(/OK/i)
+    })
+    it("is the paragraph rendred", () => {
+        render(<App />)
+        const p = screen.getByText(/login to access the full dashboard/i)
+        expect(p).toBeInTheDocument()
+    })
+    it("is the footer rendred", () => {
+        render(<App />)
+        const p = screen.getByText(/Copyright/i)
+        expect(p).toBeInTheDocument()
+    })
+})

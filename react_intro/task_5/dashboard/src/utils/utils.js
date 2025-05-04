@@ -1,13 +1,12 @@
-// task_2/dashboard/src/utils.js
-
 export function getCurrentYear() {
-  return new Date().getFullYear();
+  let dataobj = new Date()
+  return dataobj.getFullYear()
 }
 
 export function getFooterCopy(isIndex) {
-  return isIndex ? 'Holberton School' : 'Holberton School main dashboard';
+  return isIndex ? "Holberton School" : "Holberton School main dashboard"
 }
 
 export function getLatestNotification() {
-  return '<strong>Urgent requirement</strong> - complete by EOD';
+  return ("<strong>Urgent requirement</strong> - complete by EOD")
 }

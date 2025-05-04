@@ -1,5 +1,5 @@
 import "./Notifications.css"
-import {getLatestNotification} from "./utils.js" 
+import {getLatestNotification} from "../utils/utils.js" 
 
 function Notifications() {
     return (
