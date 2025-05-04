@@ -20,9 +20,11 @@ describe('Notifications component', () => {
   });
 
   test('logs to console when close button is clicked', () => {
+    const originalLog = console.log;
     console.log = jest.fn();
     render(<Notifications />);
     fireEvent.click(screen.getByRole('button', { name: /close/i }));
     expect(console.log).toHaveBeenCalledWith('Close button has been clicked');
+    console.log = originalLog; // Restore original log
   });
 });

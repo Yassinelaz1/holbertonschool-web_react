@@ -1,15 +1,18 @@
+// task_3/dashboard/src/Notifications.jsx
 import React from 'react';
 import './Notifications.css';
 import closeIcon from './close-icon.png';
 import { getLatestNotification } from './utils';
 
 function Notifications() {
-  const handleClose = () => console.log('Close button has been clicked');
+  const handleClose = () => {
+    console.log('Close button has been clicked');
+  };
 
   return (
     <div className="notifications">
       <button
-        style={{ position: 'absolute', right: '10px', top: '10px' }}
+        style={{ position: 'absolute', top: '10px', right: '10px' }}
         aria-label="Close"
         onClick={handleClose}
       >
