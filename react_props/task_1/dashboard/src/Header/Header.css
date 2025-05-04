@@ -1,0 +1,10 @@
+.App-header {
+    display: flex;
+    align-items: center;
+    color: #e11d3f;
+    border-bottom: 3px solid #e11d3f;
+  }
+  .App-header img {
+    height: 200px;
+    width: 200px;
+  }
