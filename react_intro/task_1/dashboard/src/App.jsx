@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from './holberton-logo.jpg';
+import holbertonLogo from './assets/holberton-logo.jpg';
 import './App.css';
 import { getCurrentYear, getFooterCopy } from './utils';
 import Notifications from './Notifications';
@@ -12,7 +12,7 @@ function App() {
       </div>
       <div className="App">
         <div className="App-header">
-          <img src={logo} alt="holberton logo" />
+          <img src={holbertonLogo} alt="holberton logo" />
           <h1>School dashboard</h1>
         </div>
         <div className="App-body">
