@@ -4,14 +4,13 @@ import Notifications from './Notifications';
 
 describe('Notifications component', () => {
   test('renders the notifications title', () => {
-    const { getByText } = render(<Notifications />);
-    expect(getByText(/here is the list of notifications/i)).toBeInTheDocument();
+    expect(render(<Notifications />).getByText(/here is the list of notifications/i)).toBeInTheDocument();
   });
 
   test('renders the close button', () => {
     render(<Notifications />);
-    const closeButton = screen.getByRole('button', { name: /close/i });
-    expect(closeButton).toBeInTheDocument();
+    const button = screen.getByRole('button', { name: /close/i });
+    expect(button).toBeInTheDocument();
   });
 
   test('renders 3 list items', () => {
@@ -21,10 +20,9 @@ describe('Notifications component', () => {
   });
 
   test('logs to console when close button is clicked', () => {
-    console.log = jest.fn(); // Mock console.log
+    console.log = jest.fn();
     render(<Notifications />);
-    const closeButton = screen.getByRole('button', { name: /close/i });
-    fireEvent.click(closeButton);
+    fireEvent.click(screen.getByRole('button', { name: /close/i }));
     expect(console.log).toHaveBeenCalledWith('Close button has been clicked');
   });
 });
