@@ -1,23 +1,27 @@
-// task_3/dashboard/src/utils.spec.js
+import React from 'react';
+import { render, screen } from '@testing-library/react';
+import App from './App';
 
-import { getCurrentYear, getFooterCopy, getLatestNotification } from './utils';
-
-describe('utils functions', () => {
-  test('getCurrentYear returns the current year', () => {
-    const currentYear = new Date().getFullYear();
-    expect(getCurrentYear()).toBe(currentYear);
+describe('App component', () => {
+  test('renders 2 input elements', () => {
+    render(<App />);
+    const inputs = screen.getAllByRole('textbox');
+    const passwordInput = screen.getByLabelText(/password/i);
+    expect(inputs.length).toBe(1); // Only email uses 'textbox' role
+    expect(passwordInput).toBeInTheDocument(); // password is type="password"
   });
 
-  test('getFooterCopy returns "Holberton School" when true', () => {
-    expect(getFooterCopy(true)).toBe('Holberton School');
+  test('renders 2 label elements with the text Email and Password', () => {
+    render(<App />);
+    const emailLabel = screen.getByLabelText(/email/i);
+    const passwordLabel = screen.getByLabelText(/password/i);
+    expect(emailLabel).toBeInTheDocument();
+    expect(passwordLabel).toBeInTheDocument();
   });
 
-  test('getFooterCopy returns "Holberton School main dashboard" when false', () => {
-    expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
-  });
-
-  test('getLatestNotification returns the expected HTML string', () => {
-    const expected = '<strong>Urgent requirement</strong> - complete by EOD';
-    expect(getLatestNotification()).toBe(expected);
+  test('renders a button with text OK', () => {
+    render(<App />);
+    const button = screen.getByRole('button', { name: /ok/i });
+    expect(button).toBeInTheDocument();
   });
 });
