@@ -1,7 +1,6 @@
-// task_3/dashboard/src/Notifications.jsx
 import React from 'react';
 import './Notifications.css';
-import closeIcon from './close-icon.png';
+import closeIcon from './assets/close-icon.png';
 import { getLatestNotification } from './utils';
 
 function Notifications() {
@@ -12,7 +11,7 @@ function Notifications() {
   return (
     <div className="notifications">
       <button
-        style={{ position: 'absolute', top: '10px', right: '10px' }}
+        style={{ position: 'absolute', top: '10px', right: '10px', background: 'none', border: 'none', cursor: 'pointer' }}
         aria-label="Close"
         onClick={handleClose}
       >
