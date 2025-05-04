@@ -1,29 +1,24 @@
-import { getFullYear, getFooterCopy, getLatestNotification } from "./utils";
+// task_3/dashboard/src/utils.spec.js
 
-describe("utils_tests", function () {
-  describe("getFullYear", function () {
-    it("should return current year", function () {
-      const year = getFullYear();
-      expect(year).toEqual(new Date().getFullYear());
-    });
-  });
-  describe("getFooterCopy", function () {
-    const trueMsg = "Holberton School";
-    const falseMsg = "Holberton School main dashboard";
+import { getCurrentYear, getFooterCopy, getLatestNotification } from './utils';
 
-    it("Should return true message", function () {
-      const msg = getFooterCopy(true);
-      expect(msg).toEqual(trueMsg);
-    });
-    it("Should return false message", function () {
-      const msg = getFooterCopy(false);
-      expect(msg).toEqual(falseMsg);
-    });
+describe('Utils functions', () => {
+  test('getCurrentYear returns the current year', () => {
+    const currentYear = new Date().getFullYear();
+    expect(getCurrentYear()).toBe(currentYear);
   });
-  describe("getLatestNotification", function () {
-    it("shold return correct string element", function () {
-      const element = "<strong>Urgent requirement</strong> - complete by EOD";
-      expect(getLatestNotification()).toEqual(element);
-    });
+
+  test('getFooterCopy(true) returns "Holberton School"', () => {
+    expect(getFooterCopy(true)).toBe('Holberton School');
+  });
+
+  test('getFooterCopy(false) returns "Holberton School main dashboard"', () => {
+    expect(getFooterCopy(false)).toBe('Holberton School main dashboard');
+  });
+
+  test('getLatestNotification returns correct HTML string', () => {
+    expect(getLatestNotification()).toBe(
+      '<strong>Urgent requirement</strong> - complete by EOD'
+    );
   });
 });
