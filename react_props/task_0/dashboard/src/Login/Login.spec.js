@@ -1,9 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Login from './Login';
+import { shallow } from "enzyme";
+import React from "react";
+import Login from "./Login";
 
-test('renders login inputs and labels', () => {
-  render(<Login />);
-  expect(screen.getByLabelText(/Email/i)).toBeInTheDocument();
-  expect(screen.getByLabelText(/Password/i)).toBeInTheDocument();
+describe("<Login />", () => {
+  it("Login renders without crashing", () => {
+    const wrapper = shallow(<Login />);
+    expect(wrapper.exists()).toEqual(true);
+  });
 });

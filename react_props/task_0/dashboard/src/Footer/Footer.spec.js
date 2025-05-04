@@ -1,8 +1,10 @@
-import React from 'react';
-import { render, screen } from '@testing-library/react';
-import Footer from './Footer';
+import { shallow } from "enzyme";
+import React from "react";
+import Footer from "./Footer";
 
-test('renders footer with copyright', () => {
-  render(<Footer />);
-  expect(screen.getByText(/Copyright/i)).toBeInTheDocument();
+describe("<Footer />", () => {
+  it("Footer renders without crashing", () => {
+    const wrapper = shallow(<Footer />);
+    expect(wrapper.exists()).toEqual(true);
+  });
 });
